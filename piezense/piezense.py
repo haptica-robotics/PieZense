@@ -18,8 +18,6 @@ class PieZense:
         - 0.750062  : mmHg
         - 10.19716  : mmH2O
         @param scale_factor: scaling factor for pressure readings (default 1.0)
-        @type scale_factor: float
-
         """
         self.scale_factor = scale_factor
         self.systems = []
@@ -76,8 +74,7 @@ class PieZense:
     def isEverythingConnected(self) -> bool:
         """
         check if all registered systems are currently connected
-        Returns:
-        bool: True if all systems are connected, False otherwise
+        @return: bool: True if all systems are connected, False otherwise
         """
         return all( (system.client and system.client.is_connected) for system in self.systems)
     
@@ -86,27 +83,22 @@ class PieZense:
         send a pressure setpoint to a channel of a system
 
         @param system_num: index of the system to send the setpoint to (later this may support system names too)
-        @type system_num: int
         @param channel_num: index of the channel to send the setpoint to
-        @type channel_num: int
         @param setpoint: pressure setpoint
-        @type setpoint: float
         """
         pass
 
     def getPressureReadings(self) -> list:
         """
         get the latest pressure readings from all connected systems
-        Returns:
-        list: a list of lists, where each inner list contains the pressure readings for a system
+        @return: list: a list of lists, where each inner list contains the pressure readings for a system
         """
         return self.pressures
     
     def setCallback(self, callback_function):
         """
         set a callback function to be called when new pressure data is received
-        Args:
-        callback_function (function): a function that takes three arguments: system_num (int) and pressure_data (list)
+        @param callback_function: a function that takes three arguments: system_num (int) and pressure_data (list)
         """
         pass
     
@@ -114,29 +106,29 @@ class PieZense:
         """
         configure pressure forwarding from one channel to another
 
-        @param source_system_num (int): index of the source system
-        @param source_channel_num (int): index of the source channel
-        @param target_system_num (int): index of the target system
-        @param target_channel_num (int): index of the target channel
-        @param forwarding_function (function): a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
+        @param source_system_num: index of the source system
+        @param source_channel_num: index of the source channel
+        @param target_system_num: index of the target system
+        @param target_channel_num: index of the target channel
+        @param forwarding_function: a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
         """
         pass
     def addForwardingBatch(self, forwarding_configs: list):
         """
         configure multiple pressure forwardings in a batch
-        Args:
-        forwarding_configs (list): a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
+
+        @param forwarding_configs: a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
         """
         pass
 
     def stopForwarding(self, source_system_num: int, source_channel_num: int, target_system_num: int, target_channel_num: int):
         """
         stop pressure forwarding from a channel to a channel
-        Args:
-        source_system_num (int): index of the source system
-        source_channel_num (int): index of the source channel
-        target_system_num (int): index of the target system
-        target_channel_num (int): index of the target channel
+
+        @param source_system_num: index of the source system
+        @param source_channel_num: index of the source channel
+        @param target_system_num: index of the target system
+        @param target_channel_num: index of the target channel
         """
         pass
 
@@ -149,18 +141,17 @@ class PieZense:
     def sendConfig(self, system_num: int, channel_num: int, config_data: dict):
         """
         configure a channel of a system
-        Args:
-        system_num (int): index of the system to configure (later this may support system names too)
-        channel_num (int): index of the channel to configure
-        config_data (dict): configuration data to send
+        @param system_num: index of the system to configure (later this may support system names too)
+        @param channel_num: index of the channel to configure
+        @param config_data: configuration data to send
         """
         pass
 
     def sendConfigBatch(self, batch_config_data: list):
         """
         send a batch of configuration data to multiple systems and channels
-        Args:
-        batch_config_data (list): a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
+
+        @param batch_config_data: a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
         """
         pass
 
