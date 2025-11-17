@@ -48,7 +48,7 @@ class PieZense:
         """
         start the process of connecting to all registered systems
 
-        @note call this function just once
+        @note: call this function just once
 
         use isEverythingConnected() to tell when all registered systems have become connected
         """
