@@ -1,0 +1,233 @@
+#!/usr/bin/env python3
+
+import asyncio
+import bleak
+
+class PieZense:
+    """
+    A class for controlling a collection of PieZense pneumatic systems
+
+    Args:
+        scale_factor (float, optional): A scaling factor for pressure readings. Defaults to 1.0. 
+        1.0 for millibar
+        100.0 for Pa
+        0.001 for bar (atmosphere)
+        0.1 for kPa
+        0.0145038 for PSI
+        0.750062 for mmHg
+        10.19716 for mmH2O
+    """
+    def __init__(self, scale_factor: float = 1.0):
+        self.scale_factor = scale_factor
+        self.systems = []
+        self.reconnect_task = None
+        self.pressures = []
+    class _System:
+        """
+        A class representing a single PieZense system, used internally by the PieZense library
+        """
+        def __init__(self, system_name: str, channel_count: int):
+            self.system_name = system_name
+            self.channel_count = channel_count
+            self.client = None
+    def addSystem(self, system_name: str, channel_count: int) -> int:
+        """ 
+        register a PieZense system that you want to connect to
+
+        Args:
+            system_name (str): Bluetooth name of the PieZense system
+            channel_count (int): Number of channels in the system, in the future this second argument may become optional
+        """
+        return self._addSystem(system_name, channel_count)
+    def _addSystem(self, system_name, channel_count) -> int:
+        self.systems.append(self._System(system_name, channel_count))
+        self.pressures.append([0]*channel_count)
+        return len(self.systems) - 1
+    def connect(self):
+        """
+        start the process of connecting to all registered systems
+        call this function just once
+        use isEverythingConnected() to tell when all registered systems have become connected
+        """
+        self.reconnect_task = asyncio.run(self._connect())
+    async def _connect(self):
+        while(True):
+            for i, system in enumerate(self.systems):
+                if not system.client or not system.client.is_connected: # never connected or disconnected
+                    print(f"Need device: {system.system_name}")
+                    device = await bleak.BleakScanner.find_device_by_name(system.system_name)
+                    print(f"Scanned for device: {system.system_name}")
+                    if device:
+                        print(f"Found device: {device}")
+                        system.client = bleak.BleakClient(device)
+                        await system.client.connect()
+                        if system.client.is_connected:
+                            print(f"Connected to device: {system.system_name}")
+                            services=system.client.services
+                            print(f"Services: {services}")
+                        else:
+                            print(f"Failed to connect to device: {system.system_name}")
+                            system.client = None
+                await asyncio.sleep(10)
+
+    def isEverythingConnected(self) -> bool:
+        """
+        check if all registered systems are currently connected
+        Returns:
+            bool: True if all systems are connected, False otherwise
+        """
+        return all( (system.client and system.client.is_connected) for system in self.systems)
+    
+    def sendSetpoint(self, system_num: int, channel_num: int, setpoint: float):
+        """
+        send a pressure setpoint to a channel of a system
+        Args:
+            system_num (int): index of the system to send the setpoint to (later this may support system names too)
+            channel_num (int): index of the channel to send the setpoint to
+            setpoint (float): pressure setpoint
+        """
+        pass
+
+    def getPressureReadings(self) -> list:
+        """
+        get the latest pressure readings from all connected systems
+        Returns:
+            list: a list of lists, where each inner list contains the pressure readings for a system
+        """
+        return self.pressures
+    
+    def setCallback(self, callback_function):
+        """
+        set a callback function to be called when new pressure data is received
+        Args:
+            callback_function (function): a function that takes three arguments: system_num (int) and pressure_data (list)
+        """
+        pass
+    
+    def addForwarding(self, source_system_num: int, source_channel_num: int, target_system_num: int, target_channel_num: int, forwarding_function):
+        """
+        configure pressure forwarding from one channel to another
+        Args:
+            source_system_num (int): index of the source system
+            source_channel_num (int): index of the source channel
+            target_system_num (int): index of the target system
+            target_channel_num (int): index of the target channel
+            forwarding_function (function): a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
+        """
+        pass
+    def addForwardingBatch(self, forwarding_configs: list):
+        """
+        configure multiple pressure forwardings in a batch
+        Args:
+            forwarding_configs (list): a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
+        """
+        pass
+
+    def stopForwarding(self, source_system_num: int, source_channel_num: int, target_system_num: int, target_channel_num: int):
+        """
+        stop pressure forwarding from a channel to a channel
+        Args:
+            source_system_num (int): index of the source system
+            source_channel_num (int): index of the source channel
+            target_system_num (int): index of the target system
+            target_channel_num (int): index of the target channel
+        """
+        pass
+
+    def clearAllForwarding(self):
+        """
+        clear all pressure forwarding configurations
+        """
+        pass
+
+    def sendConfig(self, system_num: int, channel_num: int, config_data: dict):
+        """
+        configure a channel of a system
+        Args:
+            system_num (int): index of the system to configure (later this may support system names too)
+            channel_num (int): index of the channel to configure
+            config_data (dict): configuration data to send
+        """
+        pass
+
+    def sendConfigBatch(self, batch_config_data: list):
+        """
+        send a batch of configuration data to multiple systems and channels
+        Args:
+            batch_config_data (list): a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
+        """
+        pass
+
+    def setMode(self, mode: dict):
+        """
+        TODO plan the structure of the mode parameter
+        set the operating mode of the PieZense systems
+        mode (dict): mode configuration data
+        clear forwarding
+        set configuration (all acutator and pressurize mode)
+        wait a few seconds
+        add set of forwardings
+        set second configuration
+
+        """
+        pass
+
+
+# """This module provides the PieZense class for interfacing with PieZense pneumatic systems via Bluetooth Low Energy (BLE)."""
+# class PieZense:
+#     def __init__(self):
+#         self.system_client_list=[] # list of BleakClient objects
+    
+#     """Connect to multiple PieZense systems by their names."""
+#     def connect_to_systems(self, system_name_list_input):
+#         self.system_name_list = system_name_list_input
+#         self.num_systems = len(self.system_name_list)
+#         for i, _ in enumerate(self.system_name_list):
+#             self.system_client_list.append(None)
+
+#         asyncio.run(self.reconnect_to_systems())
+
+#     async def reconnect_to_systems(self):
+#         while(True):
+#             for i, system_name in enumerate(self.system_name_list):
+#                 if self.system_client_list[i] is None: # connect
+#                     print(f"Need device: {system_name}")
+#                     device = await bleak.BleakScanner.find_device_by_name(system_name)
+#                     print(f"Scanned for device: {system_name}")
+#                     if device:
+#                         print(f"Found device: {device}")
+#                         self.system_client_list[i] = bleak.BleakClient(device)
+#                         # self.system_client_list[i].set_disconnected_callback(self.generate_disconnect_callback(i, system_name))
+#                         await self.system_client_list[i].connect()
+#                         if self.system_client_list[i].is_connected:
+#                             print(f"Connected to device: {system_name}")
+#                             services=await self.system_client_list[i].services
+#                             print(f"Services: {services}")
+
+#                             for service in services:
+#                                 for char in service.characteristics:
+#                                     if "notify" in char.properties:
+#                                         print(f"[{system_name}] Subscribing to {char.uuid}")
+#                                         await self.system_client_list[i].start_notify(
+#                                             char.uuid,
+#                                             lambda sender, data, idx=i: self.notification_handler(idx, sender, data)
+#                                         )
+#                         else:
+#                             print(f"Failed to connect to device: {system_name}")
+#                             self.system_client_list[i] = None
+
+#                 else:
+#                     print(f"Device not found, will retry: {system_name}")
+#                 await asyncio.sleep(11)
+
+#     def notification_handler(self, device_index, sender, data):
+#         expected_without_ts = FOLLOWER_COUNT * 2
+#         pressure_data = data[:expected_without_ts]
+#         num_followers = len(pressure_data) // 2 # // does integer division
+#         for follower_id in range(num_followers):
+#             low_byte = pressure_data[follower_id * 2]
+#             high_byte = pressure_data[follower_id * 2 + 1]
+#             pressure_value = (high_byte << 8) | low_byte
+#             print(f"Device {device_index}, Follower {follower_id}, Pressure: {pressure_value} Pa")
+
+            
