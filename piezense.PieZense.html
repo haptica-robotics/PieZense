@@ -438,7 +438,7 @@
         </div>
 
         <div class="extrasDocstring">
-          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">PieZense</span>: <a href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L9" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="piezense.PieZense.__init__">PieZense(scale_factor)</a></code></p><p><a href="classIndex.html#piezense.PieZense">View In Hierarchy</a></p>
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">PieZense</span>: <a href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L9" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="piezense.PieZense.__init__">PieZense(scale_factor)</a></code></p><p><a href="classIndex.html#piezense.PieZense">View In Hierarchy</a></p>
         </div>
 
         <div class="moduleDocstring">
@@ -463,7 +463,7 @@
     
     <td>Method</td>
     <td><code><a href="#addForwardingBatch" class="internal-link" title="piezense.PieZense.addForwardingBatch">add<wbr></wbr>Forwarding<wbr></wbr>Batch</a></code></td>
-    <td>configure multiple pressure forwardings in a batch Args: forwarding_configs (list): a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))...</td>
+    <td>configure multiple pressure forwardings in a batch</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -483,22 +483,22 @@
     
     <td>Method</td>
     <td><code><a href="#getPressureReadings" class="internal-link" title="piezense.PieZense.getPressureReadings">get<wbr></wbr>Pressure<wbr></wbr>Readings</a></code></td>
-    <td>get the latest pressure readings from all connected systems Returns: list: a list of lists, where each inner list contains the pressure readings for a system</td>
+    <td>get the latest pressure readings from all connected systems</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#isEverythingConnected" class="internal-link" title="piezense.PieZense.isEverythingConnected">is<wbr></wbr>Everything<wbr></wbr>Connected</a></code></td>
-    <td>check if all registered systems are currently connected Returns: bool: True if all systems are connected, False otherwise</td>
+    <td>check if all registered systems are currently connected</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#sendConfig" class="internal-link" title="piezense.PieZense.sendConfig">send<wbr></wbr>Config</a></code></td>
-    <td>configure a channel of a system Args: system_num (int): index of the system to configure (later this may support system names too) channel_num (int): index of the channel to configure config_data (dict): configuration data to send...</td>
+    <td>configure a channel of a system</td>
   </tr><tr class="method">
     
     <td>Method</td>
     <td><code><a href="#sendConfigBatch" class="internal-link" title="piezense.PieZense.sendConfigBatch">send<wbr></wbr>Config<wbr></wbr>Batch</a></code></td>
-    <td>send a batch of configuration data to multiple systems and channels Args: batch_config_data (list): a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))</td>
+    <td>send a batch of configuration data to multiple systems and channels</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -508,7 +508,7 @@
     
     <td>Method</td>
     <td><code><a href="#setCallback" class="internal-link" title="piezense.PieZense.setCallback">set<wbr></wbr>Callback</a></code></td>
-    <td>set a callback function to be called when new pressure data is received Args: callback_function (function): a function that takes three arguments: system_num (int) and pressure_data (list)</td>
+    <td>set a callback function to be called when new pressure data is received</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -518,7 +518,7 @@
     
     <td>Method</td>
     <td><code><a href="#stopForwarding" class="internal-link" title="piezense.PieZense.stopForwarding">stop<wbr></wbr>Forwarding</a></code></td>
-    <td>stop pressure forwarding from a channel to a channel Args: source_system_num (int): index of the source system source_channel_num (int): index of the source channel target_system_num (int): index of the target system target_channel_num (int): index of the target channel...</td>
+    <td>stop pressure forwarding from a channel to a channel</td>
   </tr><tr class="instancevariable">
     
     <td>Instance Variable</td>
@@ -575,7 +575,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">__init__</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">scale_factor: <code><a href="https://docs.python.org/3/library/functions.html#float" class="intersphinx-link">float</a></code> = 1.0</span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L10">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L10">
       
       (source)
     </a>
@@ -597,7 +597,7 @@
 <li>0.750062  : mmHg</li>
 <li>10.19716  : mmH2O</li>
 </ul>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scale<wbr></wbr>_factor:</span>float</td><td class="fieldArgDesc">scaling factor for pressure readings (default 1.0)</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">scale<wbr></wbr>_factor:</span><code><a href="https://docs.python.org/3/library/functions.html#float" class="intersphinx-link">float</a></code></td><td class="fieldArgDesc">scaling factor for pressure readings (default 1.0)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -612,7 +612,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">addForwarding</span><span class="function-signature long-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">source_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">source_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">forwarding_function</span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L113">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L105">
       
       (source)
     </a>
@@ -624,7 +624,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>configure pressure forwarding from one channel to another</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">forwarding<wbr></wbr>_function</span></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_system<wbr></wbr>_num (int)</span></td><td class="fieldArgDesc">index of the source system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_channel<wbr></wbr>_num (int)</span></td><td class="fieldArgDesc">index of the source channel</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_system<wbr></wbr>_num (int)</span></td><td class="fieldArgDesc">index of the target system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_channel<wbr></wbr>_num (int)</span></td><td class="fieldArgDesc">index of the target channel</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">forwarding<wbr></wbr>_function (function)</span></td><td class="fieldArgDesc">a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)</td></tr></table></div>
+    <div><p>configure pressure forwarding from one channel to another</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the source system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the source channel</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the target system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the target channel</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">forwarding<wbr></wbr>_function</span></td><td class="fieldArgDesc">a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -639,7 +639,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">addForwardingBatch</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">forwarding_configs: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L124">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L116">
       
       (source)
     </a>
@@ -651,7 +651,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>configure multiple pressure forwardings in a batch Args: forwarding_configs (list): a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))</p></div>
+    <div><p>configure multiple pressure forwardings in a batch</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">forwarding<wbr></wbr>_configs:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></td><td class="fieldArgDesc">a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -666,7 +666,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">addSystem</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, </span><span class="rst-sig-param">channel_count: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L36">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L34">
       
       (source)
     </a>
@@ -693,7 +693,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">clearAllForwarding</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L143">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L135">
       
       (source)
     </a>
@@ -720,7 +720,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">connect</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L49">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L47">
       
       (source)
     </a>
@@ -747,7 +747,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">getPressureReadings</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L97">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L91">
       
       (source)
     </a>
@@ -759,7 +759,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>get the latest pressure readings from all connected systems Returns: list: a list of lists, where each inner list contains the pressure readings for a system</p></div>
+    <div><p>get the latest pressure readings from all connected systems</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></td><td class="fieldArgDesc">list: a list of lists, where each inner list contains the pressure readings for a system</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -774,7 +774,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">isEverythingConnected</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L76">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L74">
       
       (source)
     </a>
@@ -786,7 +786,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>check if all registered systems are currently connected Returns: bool: True if all systems are connected, False otherwise</p></div>
+    <div><p>check if all registered systems are currently connected</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code></td><td class="fieldArgDesc">bool: True if all systems are connected, False otherwise</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -801,7 +801,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">sendConfig</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">config_data: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L149">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L141">
       
       (source)
     </a>
@@ -813,7 +813,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>configure a channel of a system Args: system_num (int): index of the system to configure (later this may support system names too) channel_num (int): index of the channel to configure config_data (dict): configuration data to send</p></div>
+    <div><p>configure a channel of a system</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the system to configure (later this may support system names too)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the channel to configure</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">config<wbr></wbr>_data:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></td><td class="fieldArgDesc">configuration data to send</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -828,7 +828,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">sendConfigBatch</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">batch_config_data: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L159">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L150">
       
       (source)
     </a>
@@ -840,7 +840,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>send a batch of configuration data to multiple systems and channels Args: batch_config_data (list): a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))</p></div>
+    <div><p>send a batch of configuration data to multiple systems and channels</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">batch<wbr></wbr>_config<wbr></wbr>_data:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></td><td class="fieldArgDesc">a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -855,7 +855,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">sendSetpoint</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">setpoint: <code><a href="https://docs.python.org/3/library/functions.html#float" class="intersphinx-link">float</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L84">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L81">
       
       (source)
     </a>
@@ -867,7 +867,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>send a pressure setpoint to a channel of a system</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">system<wbr></wbr>_num:</span>int</td><td class="fieldArgDesc">index of the system to send the setpoint to (later this may support system names too)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">channel<wbr></wbr>_num:</span>int</td><td class="fieldArgDesc">index of the channel to send the setpoint to</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">setpoint:</span>float</td><td class="fieldArgDesc">pressure setpoint</td></tr></table></div>
+    <div><p>send a pressure setpoint to a channel of a system</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the system to send the setpoint to (later this may support system names too)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the channel to send the setpoint to</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">setpoint:</span><code><a href="https://docs.python.org/3/library/functions.html#float" class="intersphinx-link">float</a></code></td><td class="fieldArgDesc">pressure setpoint</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -882,7 +882,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">setCallback</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">callback_function</span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L105">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L98">
       
       (source)
     </a>
@@ -894,7 +894,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>set a callback function to be called when new pressure data is received Args: callback_function (function): a function that takes three arguments: system_num (int) and pressure_data (list)</p></div>
+    <div><p>set a callback function to be called when new pressure data is received</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">callback<wbr></wbr>_function</span></td><td class="fieldArgDesc">a function that takes three arguments: system_num (int) and pressure_data (list)</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -909,7 +909,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">setMode</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">mode: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L167">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L158">
       
       (source)
     </a>
@@ -936,7 +936,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">stopForwarding</span><span class="function-signature long-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">source_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">source_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L132">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L124">
       
       (source)
     </a>
@@ -948,7 +948,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>stop pressure forwarding from a channel to a channel Args: source_system_num (int): index of the source system source_channel_num (int): index of the source channel target_system_num (int): index of the target system target_channel_num (int): index of the target channel</p></div>
+    <div><p>stop pressure forwarding from a channel to a channel</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the source system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">source<wbr></wbr>_channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the source channel</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_system<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the target system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">target<wbr></wbr>_channel<wbr></wbr>_num:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the target channel</td></tr></table></div>
   </div>
 </div><div class="baseinstancevariable">
   
@@ -962,7 +962,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">pressures</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L27">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L25">
       
       (source)
     </a>
@@ -989,7 +989,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">reconnect_task</span> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L26">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L24">
       
       (source)
     </a>
@@ -1016,7 +1016,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">scale_factor</span> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L24">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L22">
       
       (source)
     </a>
@@ -1043,7 +1043,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">systems</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L25">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L23">
       
       (source)
     </a>
@@ -1071,7 +1071,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">_addSystem</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_name, </span><span class="rst-sig-param">channel_count</span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L45">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L43">
       
       (source)
     </a>
@@ -1098,7 +1098,7 @@
     
     
     <span class="py-keyword">async&#160;def</span>&#160;<span class="py-defname">_connect</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/3f785cba687d73cdb4df1b0dfacb260fd592ec56/piezense/piezense.py#L56">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/8081c46b8f3fb4d48a5759d57829e87dc980c653/piezense/piezense.py#L54">
       
       (source)
     </a>
@@ -1124,7 +1124,7 @@
   <div class="container-fluid">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/haptica-robotics/PieZense" class="projecthome">PieZense</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    25.10.1 at 2025-11-17 08:55:26.
+    25.10.1 at 2025-11-17 09:01:40.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
