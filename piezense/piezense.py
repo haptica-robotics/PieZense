@@ -8,14 +8,14 @@ class PieZense:
     A class for controlling a collection of PieZense pneumatic systems
 
     Args:
-        scale_factor (float, optional): A scaling factor for pressure readings. Defaults to 1.0. 
-        1.0 for millibar
-        100.0 for Pa
-        0.001 for bar (atmosphere)
-        0.1 for kPa
-        0.0145038 for PSI
-        0.750062 for mmHg
-        10.19716 for mmH2O
+    scale_factor (float, optional): A scaling factor for pressure readings. Defaults to 1.0. 
+    1.0 for millibar
+    100.0 for Pa
+    0.001 for bar (atmosphere)
+    0.1 for kPa
+    0.0145038 for PSI
+    0.750062 for mmHg
+    10.19716 for mmH2O
     """
     def __init__(self, scale_factor: float = 1.0):
         self.scale_factor = scale_factor
@@ -33,10 +33,9 @@ class PieZense:
     def addSystem(self, system_name: str, channel_count: int) -> int:
         """ 
         register a PieZense system that you want to connect to
-
         Args:
-            system_name (str): Bluetooth name of the PieZense system
-            channel_count (int): Number of channels in the system, in the future this second argument may become optional
+        system_name (str): Bluetooth name of the PieZense system
+        channel_count (int): Number of channels in the system, in the future this second argument may become optional
         """
         return self._addSystem(system_name, channel_count)
     def _addSystem(self, system_name, channel_count) -> int:
@@ -74,7 +73,7 @@ class PieZense:
         """
         check if all registered systems are currently connected
         Returns:
-            bool: True if all systems are connected, False otherwise
+        bool: True if all systems are connected, False otherwise
         """
         return all( (system.client and system.client.is_connected) for system in self.systems)
     
@@ -82,9 +81,9 @@ class PieZense:
         """
         send a pressure setpoint to a channel of a system
         Args:
-            system_num (int): index of the system to send the setpoint to (later this may support system names too)
-            channel_num (int): index of the channel to send the setpoint to
-            setpoint (float): pressure setpoint
+        system_num (int): index of the system to send the setpoint to (later this may support system names too)
+        channel_num (int): index of the channel to send the setpoint to
+        setpoint (float): pressure setpoint
         """
         pass
 
@@ -92,7 +91,7 @@ class PieZense:
         """
         get the latest pressure readings from all connected systems
         Returns:
-            list: a list of lists, where each inner list contains the pressure readings for a system
+        list: a list of lists, where each inner list contains the pressure readings for a system
         """
         return self.pressures
     
@@ -100,7 +99,7 @@ class PieZense:
         """
         set a callback function to be called when new pressure data is received
         Args:
-            callback_function (function): a function that takes three arguments: system_num (int) and pressure_data (list)
+        callback_function (function): a function that takes three arguments: system_num (int) and pressure_data (list)
         """
         pass
     
@@ -108,18 +107,18 @@ class PieZense:
         """
         configure pressure forwarding from one channel to another
         Args:
-            source_system_num (int): index of the source system
-            source_channel_num (int): index of the source channel
-            target_system_num (int): index of the target system
-            target_channel_num (int): index of the target channel
-            forwarding_function (function): a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
+        source_system_num (int): index of the source system
+        source_channel_num (int): index of the source channel
+        target_system_num (int): index of the target system
+        target_channel_num (int): index of the target channel
+        forwarding_function (function): a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
         """
         pass
     def addForwardingBatch(self, forwarding_configs: list):
         """
         configure multiple pressure forwardings in a batch
         Args:
-            forwarding_configs (list): a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
+        forwarding_configs (list): a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
         """
         pass
 
@@ -127,10 +126,10 @@ class PieZense:
         """
         stop pressure forwarding from a channel to a channel
         Args:
-            source_system_num (int): index of the source system
-            source_channel_num (int): index of the source channel
-            target_system_num (int): index of the target system
-            target_channel_num (int): index of the target channel
+        source_system_num (int): index of the source system
+        source_channel_num (int): index of the source channel
+        target_system_num (int): index of the target system
+        target_channel_num (int): index of the target channel
         """
         pass
 
@@ -144,9 +143,9 @@ class PieZense:
         """
         configure a channel of a system
         Args:
-            system_num (int): index of the system to configure (later this may support system names too)
-            channel_num (int): index of the channel to configure
-            config_data (dict): configuration data to send
+        system_num (int): index of the system to configure (later this may support system names too)
+        channel_num (int): index of the channel to configure
+        config_data (dict): configuration data to send
         """
         pass
 
@@ -154,7 +153,7 @@ class PieZense:
         """
         send a batch of configuration data to multiple systems and channels
         Args:
-            batch_config_data (list): a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
+        batch_config_data (list): a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
         """
         pass
 
@@ -168,7 +167,6 @@ class PieZense:
         wait a few seconds
         add set of forwardings
         set second configuration
-
         """
         pass
 
