@@ -38,7 +38,7 @@ jobs:
             --html-viewsource-base=https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA \
             --html-base-url=https://$GITHUB_REPOSITORY_OWNER.github.io/${GITHUB_REPOSITORY#*/} \
             --html-output=./apidocs \
-            --docformat=restructuredtext \
+            --docformat=epytext \
             --intersphinx=https://docs.python.org/3/objects.inv \
             ./piezense
 
