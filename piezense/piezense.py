@@ -38,9 +38,8 @@ class PieZense:
         register a PieZense system that you want to connect to
 
         @param system_name: Bluetooth name of the PieZense system
-        @type system_name: str
         @param channel_count: Number of channels in the system, in the future this second argument may become optional
-        @type channel_count: int
+        @return: index of the registered system
         """
         return self._addSystem(system_name, channel_count)
     def _addSystem(self, system_name, channel_count) -> int:
@@ -85,6 +84,7 @@ class PieZense:
     def sendSetpoint(self, system_num: int, channel_num: int, setpoint: float):
         """
         send a pressure setpoint to a channel of a system
+
         @param system_num: index of the system to send the setpoint to (later this may support system names too)
         @type system_num: int
         @param channel_num: index of the channel to send the setpoint to
@@ -113,12 +113,12 @@ class PieZense:
     def addForwarding(self, source_system_num: int, source_channel_num: int, target_system_num: int, target_channel_num: int, forwarding_function):
         """
         configure pressure forwarding from one channel to another
-        Args:
-        source_system_num (int): index of the source system
-        source_channel_num (int): index of the source channel
-        target_system_num (int): index of the target system
-        target_channel_num (int): index of the target channel
-        forwarding_function (function): a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
+
+        @param source_system_num (int): index of the source system
+        @param source_channel_num (int): index of the source channel
+        @param target_system_num (int): index of the target system
+        @param target_channel_num (int): index of the target channel
+        @param forwarding_function (function): a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
         """
         pass
     def addForwardingBatch(self, forwarding_configs: list):
@@ -170,7 +170,7 @@ class PieZense:
         set the operating mode of the PieZense systems
         mode (dict): mode configuration data
         clear forwarding
-        set configuration (all acutator and pressurize mode)
+        set configuration (all actuator and pressurize mode)
         wait a few seconds
         add set of forwardings
         set second configuration
@@ -234,4 +234,3 @@ class PieZense:
 #             high_byte = pressure_data[follower_id * 2 + 1]
 #             pressure_value = (high_byte << 8) | low_byte
 #             print(f"Device {device_index}, Follower {follower_id}, Pressure: {pressure_value} Pa")
-
