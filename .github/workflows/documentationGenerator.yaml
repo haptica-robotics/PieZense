@@ -30,7 +30,7 @@ jobs:
 
         # Run pydoctor build
         pydoctor \
-            --project-name=(projectname) \
+            --project-name=PieZense \
             --project-url=https://github.com/$GITHUB_REPOSITORY \
             --html-viewsource-base=https://github.com/$GITHUB_REPOSITORY/tree/$GITHUB_SHA \
             --html-base-url=https://$GITHUB_REPOSITORY_OWNER.github.io/${GITHUB_REPOSITORY#*/} \
