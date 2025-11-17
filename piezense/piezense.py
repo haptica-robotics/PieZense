@@ -5,17 +5,19 @@ import bleak
 
 class PieZense:
     """
-    A class for controlling a collection of PieZense pneumatic systems
+    A class for controlling a collection of PieZense pneumatic systems.
 
-    Args:
-    scale_factor (float, optional): A scaling factor for pressure readings. Defaults to 1.0. 
-    1.0 for millibar
-    100.0 for Pa
-    0.001 for bar (atmosphere)
-    0.1 for kPa
-    0.0145038 for PSI
-    0.750062 for mmHg
-    10.19716 for mmH2O
+    @param scale_factor: scaling factor for pressure readings (default 1.0)
+    @type scale_factor: float
+
+    Common scale_factor values:
+      - 1.0       : millibar
+      - 100.0     : Pa
+      - 0.001     : bar (atmosphere)
+      - 0.1       : kPa
+      - 0.0145038 : PSI
+      - 0.750062  : mmHg
+      - 10.19716  : mmH2O
     """
     def __init__(self, scale_factor: float = 1.0):
         self.scale_factor = scale_factor
@@ -228,4 +230,3 @@ class PieZense:
 #             pressure_value = (high_byte << 8) | low_byte
 #             print(f"Device {device_index}, Follower {follower_id}, Pressure: {pressure_value} Pa")
 
-            
