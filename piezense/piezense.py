@@ -9,9 +9,6 @@ A class for controlling a collection of PieZense pneumatic systems.
 class PieZense:
     def __init__(self, scale_factor: float = 1.0):
         """
-        @param scale_factor: scaling factor for pressure readings (default 1.0)
-        @type scale_factor: float
-
         Common scale_factor values:
         - 1.0       : millibar
         - 100.0     : Pa
@@ -20,6 +17,9 @@ class PieZense:
         - 0.0145038 : PSI
         - 0.750062  : mmHg
         - 10.19716  : mmH2O
+        @param scale_factor: scaling factor for pressure readings (default 1.0)
+        @type scale_factor: float
+
         """
         self.scale_factor = scale_factor
         self.systems = []
@@ -36,7 +36,7 @@ class PieZense:
     def addSystem(self, system_name: str, channel_count: int) -> int:
         """ 
         register a PieZense system that you want to connect to
-        Args:
+
         @param system_name: Bluetooth name of the PieZense system
         @type system_name: str
         @param channel_count: Number of channels in the system, in the future this second argument may become optional
