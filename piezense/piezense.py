@@ -3,23 +3,24 @@
 import asyncio
 import bleak
 
+"""
+A class for controlling a collection of PieZense pneumatic systems.
+"""
 class PieZense:
-    """
-    A class for controlling a collection of PieZense pneumatic systems.
-
-    @param scale_factor: scaling factor for pressure readings (default 1.0)
-    @type scale_factor: float
-
-    Common scale_factor values:
-      - 1.0       : millibar
-      - 100.0     : Pa
-      - 0.001     : bar (atmosphere)
-      - 0.1       : kPa
-      - 0.0145038 : PSI
-      - 0.750062  : mmHg
-      - 10.19716  : mmH2O
-    """
     def __init__(self, scale_factor: float = 1.0):
+        """
+        @param scale_factor: scaling factor for pressure readings (default 1.0)
+        @type scale_factor: float
+
+        Common scale_factor values:
+        - 1.0       : millibar
+        - 100.0     : Pa
+        - 0.001     : bar (atmosphere)
+        - 0.1       : kPa
+        - 0.0145038 : PSI
+        - 0.750062  : mmHg
+        - 10.19716  : mmH2O
+        """
         self.scale_factor = scale_factor
         self.systems = []
         self.reconnect_task = None
@@ -36,8 +37,10 @@ class PieZense:
         """ 
         register a PieZense system that you want to connect to
         Args:
-        system_name (str): Bluetooth name of the PieZense system
-        channel_count (int): Number of channels in the system, in the future this second argument may become optional
+        @param system_name: Bluetooth name of the PieZense system
+        @type system_name: str
+        @param channel_count: Number of channels in the system, in the future this second argument may become optional
+        @type channel_count: int
         """
         return self._addSystem(system_name, channel_count)
     def _addSystem(self, system_name, channel_count) -> int:
@@ -82,10 +85,12 @@ class PieZense:
     def sendSetpoint(self, system_num: int, channel_num: int, setpoint: float):
         """
         send a pressure setpoint to a channel of a system
-        Args:
-        system_num (int): index of the system to send the setpoint to (later this may support system names too)
-        channel_num (int): index of the channel to send the setpoint to
-        setpoint (float): pressure setpoint
+        @param system_num: index of the system to send the setpoint to (later this may support system names too)
+        @type system_num: int
+        @param channel_num: index of the channel to send the setpoint to
+        @type channel_num: int
+        @param setpoint: pressure setpoint
+        @type setpoint: float
         """
         pass
 
