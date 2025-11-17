@@ -12,17 +12,17 @@ class PieZense:
         Common scale_factor values:
         - 1.0       : millibar
         - 100.0     : Pa
-        - 0.001     : bar (atmosphere)
         - 0.1       : kPa
+        - 0.001     : bar (atmosphere)
         - 0.0145038 : PSI
         - 0.750062  : mmHg
         - 10.19716  : mmH2O
         @param scale_factor: scaling factor for pressure readings (default 1.0)
         """
-        self.scale_factor = scale_factor
-        self.systems = []
-        self.reconnect_task = None
-        self.pressures = []
+        self._scale_factor = scale_factor
+        self._systems = []
+        self._reconnect_task = None
+        self._pressures = []
     class _System:
         """
         A class representing a single PieZense system, used internally by the PieZense library
@@ -41,19 +41,21 @@ class PieZense:
         """
         return self._addSystem(system_name, channel_count)
     def _addSystem(self, system_name, channel_count) -> int:
-        self.systems.append(self._System(system_name, channel_count))
-        self.pressures.append([0]*channel_count)
-        return len(self.systems) - 1
+        self._systems.append(self._System(system_name, channel_count))
+        self._pressures.append([0]*channel_count)
+        return len(self._systems) - 1
     def connect(self):
         """
         start the process of connecting to all registered systems
-        call this function just once
+
+        @note call this function just once
+
         use isEverythingConnected() to tell when all registered systems have become connected
         """
-        self.reconnect_task = asyncio.run(self._connect())
+        self._reconnect_task = asyncio.run(self._connect())
     async def _connect(self):
         while(True):
-            for i, system in enumerate(self.systems):
+            for i, system in enumerate(self._systems):
                 if not system.client or not system.client.is_connected: # never connected or disconnected
                     print(f"Need device: {system.system_name}")
                     device = await bleak.BleakScanner.find_device_by_name(system.system_name)
@@ -76,7 +78,7 @@ class PieZense:
         check if all registered systems are currently connected
         @return: bool: True if all systems are connected, False otherwise
         """
-        return all( (system.client and system.client.is_connected) for system in self.systems)
+        return all( (system.client and system.client.is_connected) for system in self._systems)
     
     def sendSetpoint(self, system_num: int, channel_num: int, setpoint: float):
         """
@@ -93,7 +95,7 @@ class PieZense:
         get the latest pressure readings from all connected systems
         @return: list: a list of lists, where each inner list contains the pressure readings for a system
         """
-        return self.pressures
+        return self._pressures
     
     def setCallback(self, callback_function):
         """
