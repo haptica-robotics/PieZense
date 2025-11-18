@@ -173,19 +173,23 @@ class PieZense:
 
     def setMode(self, mode: dict):
         """
-        set the operating mode of the PieZense systems
+        Set the operating mode of the PieZense systems.
 
-        mode (dict): {"reset_config": config_data_batch, "setpoints": setpoint_batch, "wait_time": seconds, "forwarding": forwarding_batch, "final_config": config_data_batch}
-        
-        1. clears all forwarding
+        @param mode: dictionary describing mode actions
 
-        2. sends the reset_config set of configuration changes (probably setting all channels to actuator mode and default control loop parameters)
+        The mode dict may contain keys:
+          - "reset_config": config_data_batch
+          - "setpoints": setpoint_batch
+          - "wait_time": seconds
+          - "forwarding": forwarding_batch
+          - "final_config": config_data_batch
 
-        3. waits for wait_time seconds
-
-        4. adds the new set of channel forwardings
-
-        5. sends the "final_config" set of configuration changes (probably setting channels to sensor or actuator mode as desired)
+        setMode performs the following steps:
+          1. Clears all forwarding.
+          2. Sends the "reset_config" set of configuration changes (e.g. set actuator mode / default loop params).
+          3. Waits for "wait_time" seconds.
+          4. Adds the new set of channel forwardings.
+          5. Sends the "final_config" set of configuration changes.
         """
         pass
 
