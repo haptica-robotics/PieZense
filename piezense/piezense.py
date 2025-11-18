@@ -177,12 +177,12 @@ class PieZense:
 
         @param mode: dictionary describing mode actions
 
-        The mode dict may contain keys:
-          - "reset_config": config_data_batch
-          - "setpoints": setpoint_batch
-          - "wait_time": seconds
-          - "forwarding": forwarding_batch
-          - "final_config": config_data_batch
+        The mode dict should contain the following keys: 
+          - "reset_config": config_data_batch: a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
+          - "setpoints": setpoint_batch: a list of tuples, each containing (system_num (int), channel_num (int), setpoint (float))
+          - "wait_time": seconds, float
+          - "forwarding": forwarding_batch: a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
+          - "final_config": config_data_batch: a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
 
         setMode performs the following steps:
           1. Clears all forwarding.
