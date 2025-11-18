@@ -214,6 +214,16 @@
         
 
         
+            <div class="itemName"><code><a href="#getVariableReadings" class="internal-link" title="piezense.PieZense.getVariableReadings">get<wbr></wbr>Variable<wbr></wbr>Readings</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#isEverythingConnected" class="internal-link" title="piezense.PieZense.isEverythingConnected">is<wbr></wbr>Everything<wbr></wbr>Connected</a></code>
             </div>
         
@@ -357,6 +367,16 @@
             </div>
         
 
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_variables" class="internal-link" title="piezense.PieZense._variables">_variables</a></code>
+            </div>
+        
+
     </li>
 </ul> 
 
@@ -448,7 +468,7 @@
         </div>
 
         <div class="extrasDocstring">
-          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">PieZense</span>: <a href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L9" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="piezense.PieZense.__init__">PieZense(scale_factor)</a></code></p><p><a href="classIndex.html#piezense.PieZense">View In Hierarchy</a></p>
+          <p class="class-signature"><code><span class="py-keyword">class</span> <span class="py-defname">PieZense</span>: <a href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L9" class="sourceLink">(source)</a></code></p><p>Constructor: <code><a href="#__init__" class="internal-link" title="piezense.PieZense.__init__">PieZense(scale_factor)</a></code></p><p><a href="classIndex.html#piezense.PieZense">View In Hierarchy</a></p>
         </div>
 
         <div class="moduleDocstring">
@@ -494,6 +514,11 @@
     <td>Method</td>
     <td><code><a href="#getPressureReadings" class="internal-link" title="piezense.PieZense.getPressureReadings">get<wbr></wbr>Pressure<wbr></wbr>Readings</a></code></td>
     <td>get the latest pressure readings from all connected systems</td>
+  </tr><tr class="method">
+    
+    <td>Method</td>
+    <td><code><a href="#getVariableReadings" class="internal-link" title="piezense.PieZense.getVariableReadings">get<wbr></wbr>Variable<wbr></wbr>Readings</a></code></td>
+    <td>get the latest readings of an additional variable from all connected systems</td>
   </tr><tr class="method">
     
     <td>Method</td>
@@ -569,6 +594,11 @@
     <td>Instance Variable</td>
     <td><code><a href="#_systems" class="internal-link" title="piezense.PieZense._systems">_systems</a></code></td>
     <td><span class="rst-undocumented">Undocumented</span></td>
+  </tr><tr class="instancevariable private">
+    
+    <td>Instance Variable</td>
+    <td><code><a href="#_variables" class="internal-link" title="piezense.PieZense._variables">_variables</a></code></td>
+    <td><span class="rst-undocumented">Undocumented</span></td>
   </tr>
 </table>
           
@@ -590,7 +620,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">__init__</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">scale_factor: <code><a href="https://docs.python.org/3/library/functions.html#float" class="intersphinx-link">float</a></code> = 1.0</span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L10">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L10">
       
       (source)
     </a>
@@ -627,7 +657,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">addForwarding</span><span class="function-signature long-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">source_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">source_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">forwarding_function</span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L116">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L129">
       
       (source)
     </a>
@@ -654,7 +684,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">addForwardingBatch</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">forwarding_batch: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L128">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L141">
       
       (source)
     </a>
@@ -680,8 +710,8 @@
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span>&#160;<span class="py-defname">addSystem</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, </span><span class="rst-sig-param">channel_count: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L34">
+    <span class="py-keyword">def</span>&#160;<span class="py-defname">addSystem</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_name: <code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code>, </span><span class="rst-sig-param">channel_count: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">variable_count: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code> = 1</span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>:</span>
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L35">
       
       (source)
     </a>
@@ -693,7 +723,7 @@
   </div>
   <div class="docstring functionBody">
     
-    <div><p>register a PieZense system that you want to connect to</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">system<wbr></wbr>_name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">Bluetooth name of the PieZense system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">channel<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">Number of channels in the system, in the future this second argument may become optional</td></tr></table><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the registered system</td></tr></table></div>
+    <div><p>register a PieZense system that you want to connect to</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">system<wbr></wbr>_name:</span><code><a href="https://docs.python.org/3/library/stdtypes.html#str" class="intersphinx-link">str</a></code></td><td class="fieldArgDesc">Bluetooth name of the PieZense system</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">channel<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">Number of channels in the system, in the future this second argument may become optional</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">variable<wbr></wbr>_count:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the registered system</td></tr></table></div>
   </div>
 </div><div class="basemethod">
   
@@ -708,7 +738,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">clearAllForwarding</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L147">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L160">
       
       (source)
     </a>
@@ -735,7 +765,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">connect</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L47">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L50">
       
       (source)
     </a>
@@ -764,7 +794,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">getPressureReadings</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L102">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L105">
       
       (source)
     </a>
@@ -781,6 +811,35 @@
 </div><div class="basemethod">
   
   
+  <a name="piezense.PieZense.getVariableReadings">
+    
+  </a>
+  <a name="getVariableReadings">
+    
+  </a>
+  <div class="functionHeader">
+    
+    
+    <span class="py-keyword">def</span>&#160;<span class="py-defname">getVariableReadings</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">whichVariable: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></span>) -&gt; <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code>:</span>
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L112">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#getVariableReadings" title="piezense.PieZense.getVariableReadings">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="docstring functionBody">
+    
+    <div><p>get the latest readings of an additional variable from all connected systems</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">which<wbr></wbr>Variable:</span><code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></td><td class="fieldArgDesc">index of the variable to read (0-indexed)</td></tr></table><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></td><td class="fieldArgDesc"><p>list: a list of lists, where each inner list contains the whichVariable-numbered variable for each channel of a system</p>
+<p>for example, if each system is sending leak-corrected pressure as a second variable, then getVariableReadings(1) will return a list that is like getPressureReadings() but with leak-corrected pressures instead of raw pressures</p>
+</td></tr></table></div>
+  </div>
+</div><div class="basemethod">
+  
+  
   <a name="piezense.PieZense.isEverythingConnected">
     
   </a>
@@ -791,7 +850,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">isEverythingConnected</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#bool" class="intersphinx-link">bool</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L76">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L79">
       
       (source)
     </a>
@@ -818,7 +877,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">sendConfig</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">config_data: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L153">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L166">
       
       (source)
     </a>
@@ -847,7 +906,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">sendConfigBatch</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">config_data_batch: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L164">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L177">
       
       (source)
     </a>
@@ -876,7 +935,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">sendSetpoint</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">setpoint: <code><a href="https://docs.python.org/3/library/functions.html#float" class="intersphinx-link">float</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L83">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L86">
       
       (source)
     </a>
@@ -903,7 +962,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">sendSetpointBatch</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">setpoint_batch: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L92">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L95">
       
       (source)
     </a>
@@ -932,7 +991,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">setCallback</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">callback_function</span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L109">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L122">
       
       (source)
     </a>
@@ -959,7 +1018,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">setMode</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">mode: <code><a href="https://docs.python.org/3/library/stdtypes.html#dict" class="intersphinx-link">dict</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L174">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L187">
       
       (source)
     </a>
@@ -1003,7 +1062,7 @@
     
     
     <span class="py-keyword">def</span>&#160;<span class="py-defname">stopForwarding</span><span class="function-signature long-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">source_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">source_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_system_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>, </span><span class="rst-sig-param">target_channel_num: <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L136">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L149">
       
       (source)
     </a>
@@ -1029,8 +1088,8 @@
   <div class="functionHeader">
     
     
-    <span class="py-keyword">def</span>&#160;<span class="py-defname">_addSystem</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_name, </span><span class="rst-sig-param">channel_count</span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>:</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L43">
+    <span class="py-keyword">def</span>&#160;<span class="py-defname">_addSystem</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span>, </span><span class="rst-sig-param">system_name, </span><span class="rst-sig-param">channel_count, </span><span class="rst-sig-param">variable_count</span>) -&gt; <code><a href="https://docs.python.org/3/library/functions.html#int" class="intersphinx-link">int</a></code>:</span>
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L44">
       
       (source)
     </a>
@@ -1057,7 +1116,7 @@
     
     
     <span class="py-keyword">async&#160;def</span>&#160;<span class="py-defname">_connect</span><span class="function-signature">(<span class="rst-sig-param"><span class="rst-undocumented">self</span></span>):</span>
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L56">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L59">
       
       (source)
     </a>
@@ -1083,7 +1142,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_pressures</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L25">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L25">
       
       (source)
     </a>
@@ -1110,7 +1169,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_reconnect_task</span> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L24">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L24">
       
       (source)
     </a>
@@ -1137,7 +1196,7 @@
   <div class="functionHeader">
     
     <span class="py-defname">_scale_factor</span> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L22">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L22">
       
       (source)
     </a>
@@ -1164,11 +1223,38 @@
   <div class="functionHeader">
     
     <span class="py-defname">_systems</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
-    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/2d93c9174db915e381ff96fa443167ed53b97f92/piezense/piezense.py#L23">
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L23">
       
       (source)
     </a>
     <a class="headerLink" href="#_systems" title="piezense.PieZense._systems">
+      
+      
+      ¶
+    </a>
+  </div>
+  <div class="functionBody">
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="baseinstancevariable private">
+  
+  
+  <a name="piezense.PieZense._variables">
+    
+  </a>
+  <a name="_variables">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_variables</span>: <code><a href="https://docs.python.org/3/library/stdtypes.html#list" class="intersphinx-link">list</a></code> =
+    <a class="sourceLink" href="https://github.com/haptica-robotics/PieZense/tree/ca738e4310b6fbdac6f7ec402524ede4cbd72ec8/piezense/piezense.py#L26">
+      
+      (source)
+    </a>
+    <a class="headerLink" href="#_variables" title="piezense.PieZense._variables">
       
       
       ¶
@@ -1191,7 +1277,7 @@
   <div class="container-fluid">
     <a href="index.html">API Documentation</a> for <a href="https://github.com/haptica-robotics/PieZense" class="projecthome">PieZense</a>,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    25.10.1 at 2025-11-18 06:35:02.
+    25.10.1 at 2025-11-18 18:14:17.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
