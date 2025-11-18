@@ -23,6 +23,7 @@ class PieZense:
         self._systems = []
         self._reconnect_task = None
         self._pressures = []
+        self._variables = []
     class _System:
         """
         A class representing a single PieZense system, used internally by the PieZense library
@@ -31,7 +32,7 @@ class PieZense:
             self.system_name = system_name
             self.channel_count = channel_count
             self.client = None
-    def addSystem(self, system_name: str, channel_count: int) -> int:
+    def addSystem(self, system_name: str, channel_count: int, variable_count: int=1) -> int:
         """ 
         register a PieZense system that you want to connect to
 
@@ -39,10 +40,12 @@ class PieZense:
         @param channel_count: Number of channels in the system, in the future this second argument may become optional
         @return: index of the registered system
         """
-        return self._addSystem(system_name, channel_count)
-    def _addSystem(self, system_name, channel_count) -> int:
+        return self._addSystem(system_name, channel_count, variable_count)
+    def _addSystem(self, system_name, channel_count, variable_count) -> int:
         self._systems.append(self._System(system_name, channel_count))
         self._pressures.append([0]*channel_count)
+        if variable_count > 1:
+            self._variables.append(([0]*variable_count)*channel_count)
         return len(self._systems) - 1
     def connect(self):
         """
@@ -106,6 +109,16 @@ class PieZense:
         """
         return self._pressures
     
+    def getVariableReadings(self,whichVariable:int) -> list:
+        """
+        get the latest readings of an additional variable from all connected systems
+        @param whichVariable: index of the variable to read (0-indexed)
+        @return: list: a list of lists, where each inner list contains the whichVariable-numbered variable for each channel of a system
+        
+        for example, if each system is sending leak-corrected pressure as a second variable, then getVariableReadings(1) will return a list that is like getPressureReadings() but with leak-corrected pressures instead of raw pressures
+        """
+        pass
+
     def setCallback(self, callback_function):
         """
         set a callback function to be called when new pressure data is received
