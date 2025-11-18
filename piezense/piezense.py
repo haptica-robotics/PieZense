@@ -89,6 +89,15 @@ class PieZense:
         @param setpoint: pressure setpoint
         """
         pass
+    def sendSetpointBatch(self, setpoint_batch: list):
+        """
+        send a batch of pressure setpoints to multiple systems and channels
+
+        @param setpoint_batch: a list of tuples, each containing (system_num (int), channel_num (int), setpoint (float))
+
+        example: [ (0, 0, 1013), (0, 1, 500), (1, 0, 750) ]
+        """
+        pass
 
     def getPressureReadings(self) -> list:
         """
@@ -115,11 +124,12 @@ class PieZense:
         @param forwarding_function: a function that takes a pressure value and returns a modified pressure value (for example lambda x: 4*(x-1100)+1100)
         """
         pass
-    def addForwardingBatch(self, forwarding_configs: list):
+
+    def addForwardingBatch(self, forwarding_batch: list):
         """
         configure multiple pressure forwardings in a batch
 
-        @param forwarding_configs: a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
+        @param forwarding_batch: a list of tuples, each containing (source_system_num (int), source_channel_num (int), target_system_num (int), target_channel_num (int), forwarding_function (function))
         """
         pass
 
@@ -146,27 +156,36 @@ class PieZense:
         @param system_num: index of the system to configure (later this may support system names too)
         @param channel_num: index of the channel to configure
         @param config_data: configuration data to send
+
+        config_data example {"set_act_mode": 1, "set_pid_Pvalues_p": 0.5}
         """
         pass
 
-    def sendConfigBatch(self, batch_config_data: list):
+    def sendConfigBatch(self, config_data_batch: list):
         """
         send a batch of configuration data to multiple systems and channels
 
-        @param batch_config_data: a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
+        @param config_data_batch: a list of tuples, each containing (system_num (int), channel_num (int), config_data (dict))
+
+        example: [ (0, 0, {"set_act_mode": 1}), (0, 1, {"set_act_mode": 0}), (1, 0, {"set_act_mode": 1}) ]
         """
         pass
 
     def setMode(self, mode: dict):
         """
-        TODO plan the structure of the mode parameter
         set the operating mode of the PieZense systems
-        mode (dict): mode configuration data
-        clear forwarding
-        set configuration (all actuator and pressurize mode)
-        wait a few seconds
-        add set of forwardings
-        set second configuration
+
+        mode (dict): {"reset_config": config_data_batch, "setpoints": setpoint_batch, "wait_time": seconds, "forwarding": forwarding_batch, "final_config": config_data_batch}
+        
+        1. clears all forwarding
+
+        2. sends the reset_config set of configuration changes (probably setting all channels to actuator mode and default control loop parameters)
+
+        3. waits for wait_time seconds
+
+        4. adds the new set of channel forwardings
+
+        5. sends the "final_config" set of configuration changes (probably setting channels to sensor or actuator mode as desired)
         """
         pass
 
